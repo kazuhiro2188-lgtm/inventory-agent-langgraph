@@ -1,0 +1,23 @@
+[project]
+name = "inventory-agent"
+version = "0.1.0"
+description = "在庫発注の予測とAIエージェント（Python版）"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph>=1.2",
+    "langchain-anthropic>=1.7",
+    "python-dotenv>=1.2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/inventory_agent"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
